@@ -47,7 +47,7 @@ def main():
         
 
         else:
-            print("Invalid command.")
+            print(f"Invalid command.try {list(HANDLERS.keys())}")
         
 
 if __name__ == "__main__":
