@@ -18,6 +18,9 @@ def load_data(filename="addressbook.pkl"):
 def hello(args,book):
     return "How can I help you?"
 
+def exit(args, book):
+    return book
+
 @input_error
 def add_contact(args, book):
     if len(args)< 2:

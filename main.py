@@ -12,7 +12,10 @@ HANDLERS = {
     'all' : get_all,
     'add-birthday' : add_birthday,
     'show-birthday' : show_birthday,
-    'birthdays' : birthdays
+    'birthdays' : birthdays,
+    'exit' : exit,
+    'close' : exit
+
 }
 
 def parse_input(user_input):
@@ -33,13 +36,15 @@ def main():
             command, *args = parse_input(user_input)
 
         if command in HANDLERS.keys():
+            if command in ['close', 'exit']:
+                print(book)
+                save_data(book)
+                print("Goodbye!")
+                break
+                           
             print (HANDLERS.get(command)(args, book))
 
-        elif command in ["close", "exit"]:
-            print (book)
-            save_data(book)
-            print("Good bye!")
-            break
+        
 
         else:
             print("Invalid command.")
