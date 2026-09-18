@@ -27,7 +27,7 @@ def main():
     while True:
         user_input = input("Enter a command: ")
         if len(user_input.strip())==0:
-            print(f"No command entered: try {HANDLERS.keys()}")
+            print(f"No command entered: try {list(HANDLERS.keys())}")
             continue
         else:
             command, *args = parse_input(user_input)
